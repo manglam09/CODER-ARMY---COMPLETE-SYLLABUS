@@ -1,0 +1,29 @@
+- better code--
+class Solution {
+    int add(int num){
+        if(num>=0&&num<10)return num;
+        int sum=0;
+        while(num>0){
+        int last=num%10;
+        sum+=last;
+        num=num/10;
+        }
+        return add(sum);
+        
+    }
+public:
+    int addDigits(int num) {
+        
+        return add(num);
+    }
+};
+
+
+--optimized code--
+class Solution {
+public:
+    int addDigits(int num) {  
+        if(num==0) return 0;
+        return 1+(num-1)%9;
+    }
+};
