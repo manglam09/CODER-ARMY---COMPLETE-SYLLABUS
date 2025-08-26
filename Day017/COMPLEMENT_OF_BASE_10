@@ -1,0 +1,58 @@
+class Solution {
+public:
+    int bitwiseComplement(int n) {
+        int ans=0 , mul=1 , rem;
+        while(n){
+            rem=n%10;
+            rem=rem^1;
+            ans=ans+rem*mul;
+            mul=mul*2;
+            n=n/2;
+        }
+        return ans;
+    }
+};
+
+Loop Logic
+
+Step 1:
+
+Extract last bit: rem = n % 2 = 1
+
+Flip it: rem ^ 1 = 0
+
+Add to ans: ans = ans + rem * mul = 0 + 0 * 1 = 0
+
+Update mul = 1 * 2 = 2
+
+Remove last bit from n: n = n / 2 = 2
+
+Step 2:
+
+Extract last bit: rem = n % 2 = 0
+
+Flip it: rem ^ 1 = 1
+
+Add to ans: ans = 0 + 1 * 2 = 2
+
+Update mul = 2 * 2 = 4
+
+Remove last bit: n = n / 2 = 1
+
+Step 3:
+
+Extract last bit: rem = n % 2 = 1
+
+Flip it: rem ^ 1 = 0
+
+Add to ans: ans = 2 + 0 * 4 = 2
+
+Update mul = 4 * 2 = 8
+
+Remove last bit: n = n / 2 = 0
+
+Loop Ends
+
+n = 0 → stop loop
+
+ans = 2 → decimal of flipped binary bits
