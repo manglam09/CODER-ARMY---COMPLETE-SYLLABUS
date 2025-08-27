@@ -1,0 +1,23 @@
+Byte addressable means that each unique memory address in the system refers to exactly one byte (8 bits) of data.
+
+Explanation:
+
+In most modern computer architectures, memory is byte addressable.
+
+This means if you have 1 GB of RAM, then you have 
+2
+30
+2
+30
+ different addresses, each pointing to a single byte (8 bits).
+
+For example:
+
+Address 1000 → stores 1 byte (say 10101100)
+
+Address 1001 → next byte
+
+Address 1002 → next byte, and so on.
+
+If the CPU needs a larger data type (like int = 4 bytes), it accesses 4 consecutive byte addresses.
+E.g., if an int starts at address 2000, it occupies addresses 2000, 2001, 2002, 2003.
